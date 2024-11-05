@@ -289,6 +289,14 @@ footer img{
         width: 100%;
         margin-left: 0;
     }
+
+    .menu_media{
+        display: block;
+    }
+    
+    .menu_media ul li{
+        display: block;
+    }
     
     img.imagem-servicos{
         width: 100%;
