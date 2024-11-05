@@ -8,50 +8,55 @@ body{
     font-family: "Roboto", sans-serif;
 }
 
-/*  PAINEL RESOLUÇÃO */
+body, html{
+    overflow-x: hidden; /* todo conteÃšdo que ultrapassar na horizontal no serÃĄ visÃ­vel */
+}
+
 .container{
-    max-width: 1280px;
-    width: 100%;
+    max-width: 1024px;
+    width: 95%;
     margin: 0 auto;
 }
 
-/*############ CABEÇALHO ##############*/
-/*#####################################*/
-
-header{
-    padding: 16px 0;
-    background-color: rgb(252,217,61);
-    color: #182C61;
-}
-
-header h1{
-    font-size: 30px;
-    color: #040815;
+h1{
+    font-size: 1.8em;
     font-weight: bold;
 }
 
-header nav li{
-    font-family: "Roboto", cursive;
-    font-weight: 650;
-    color: #040815;
+nav li {
+    list-style: none;
     display: inline;
     margin-left: 16px;
-    font-size: 16px;    
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/*############### CABEÇALHO #######################*/
+
+header{
+    position: sticky;
+    background-color: rgb(252,217,61);
+    padding: 16px 0;
+    color:  #040815;
+    z-index: 1; /*Porque o carousel tambÃĐm ÃĐ position: relative - entÃĢo temos que criar um index para que o cabeÃ§alho tenha preferÃŠncia*/
+}
+
+header > .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav li:hover {
+    border-top: 3px solid #040815;
+    border-bottom: 3px solid #040815;
+    padding: 10px 0;
 }
 
 header nav li a{
-    color: #182C61;
+    color: #040815;
     text-decoration: none;
-}
-
-header nav li a:hover{
-    color:rgb(167, 139, 12);
-}
-
-.logo img{
-    height: 60px;
-    mix-blend-mode: multiply; /* remover fundo imagem */
-    margin-right: 8px;
 }
 
 .logo{
@@ -59,30 +64,68 @@ header nav li a:hover{
     align-items: center;
 }
 
-header .container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+header img{
+    height: 50px;
+    mix-blend-mode: multiply;
 }
 
+/*############### MENU HAMBURGUER #######################*/
+
+.menu-hamburguer{
+    width: 32px;
+    cursor: pointer;
+    padding-right: 8px;
+}
+
+.menu-hamburguer span{
+    height: 2px;
+    width: 100%;
+    background-color: #040815;
+    display: none;
+    margin-bottom: 4px;
+}
+
+.menu_media{
+    display: none;
+    font-size: 0.8em;
+    background-color: rgb(252,217,61);
+    padding: 16px 0;
+}
+
+.menu_media ul li:hover{
+    border-top: 3px solid #040815;
+    border-bottom: 3px solid #040815;
+    padding: 10px 0;;
+}
+
+.menu_media ul li{
+    display: none;
+}
+
+.menu_media ul li a{
+    color: #040815;
+    text-decoration: none;
+}
 
 /*############ SEÇÕES ##############*/
-/*##################################*/
+
+.container .topo{
+    width: 100%;
+    border-bottom: 3px solid #040815;
+    margin-bottom: 10px;
+    background-color: rgb(252,217,61);
+    border-radius: 10px;
+}
 
 section h2,
 section h3{
-    font-family: "Roboto", cursive;
     font-weight: 650;
-    color: rgb(189, 155, 5);
+    color:#040815;
 }
 
 section h2{
-    font-size: 22px;
     margin-left: 15px;
-}
-
-section h3{
-    font-size: 18px;
+    padding-top: 10px;
 }
 
 section .container{
@@ -107,24 +150,16 @@ section h3{
 
 section p{
     margin-bottom: 8px;
-    font-family: "Nunito", cursive;
-    font-size: 14px;
+    
     text-align: justify;
-}
-
-.container .topo{
-    width: 100%;
-    border-bottom: solid;
-    border-width: 1px;
-    margin-bottom: 10px;
 }
 
 /*############ SEÇÃO SOBRE ##############*/
 /*######################################*/
 
-img.imagem-empresa{
+.imagem-sobre{
     width: 50%;
-    margin-right: 10px;
+    margin-left: 10px;
     border-radius: 12px;
 }
 
@@ -135,6 +170,13 @@ img.imagem-servicos{
     width: 50%;
     margin-right: 10px;
     margin-left: 10px;
+    border-radius: 12px;
+}
+
+/*############ SEÇÃO STORAGE ##############*/
+/*######################################*/
+
+#storage .container img{
     border-radius: 12px;
 }
 
@@ -168,15 +210,6 @@ img.imagem-servicos{
     justify-content: space-between;
 }
 
-/*############ SEÇÃO STORAGE ##############*/
-/*######################################*/
-
-#storage .container img{
-    height: 250px;
-    border-radius: 12px;
-}
-
-
 /*############ FORMULÁRIO ##############*/
 /*######################################*/
 
@@ -188,13 +221,12 @@ form input,
 form textarea,
 form button{
     display: block;
-    width: 320px;
+    width: 100%;
     margin-bottom: 8px;
     padding: 8px;
 }
 
 form button{
-    font-family: "Roboto", cursive;
     font-weight: normal;
 }
 
@@ -212,6 +244,9 @@ form button{
     color: #182C61;
     border: none;
     cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 10px;
 }
 
 form button:hover{
@@ -219,18 +254,132 @@ form button:hover{
 
 }
 
-/*############ DIV CONTAINER ##############*/
+/*############ RODAPÉ ##############*/
 /*#########################################*/
 
 footer{
     background-color: rgb(252,217,61);
     color: #182C61;
     padding: 16px 0;
-    font-size: 14px;
-    text-align: center;
+    font-size: 1em;
+}
+
+footer .container{
+    display: flex;
+    justify-content: center;
 }
 
 footer p{
-    display: inline;
+    display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+footer img{
+    height: 70px;
+}
+
+/*############### TELA CELULAR #######################*/
+
+@media screen and (max-width: 767px){
+    .container{
+        width: 90%;
+    }
+    .imagem-sobre{
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    img.imagem-servicos{
+        width: 100%;
+        margin-right: 0px;
+        margin-left: 0px;
+        margin-top: 16px;
+    }
+
+    #storage .container img{
+        width: 100%;
+    }
+
+    .corousel-imagens .slick-slide{
+        margin: 0;
+        padding: 0;
+    }
+
+    .corousel-imagens{
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .menu-hamburguer span{
+        display: block;
+    }
+
+    .menu_media ul li{
+        display: inline;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    section .container{
+        display: block;
+        align-items: center;
+    }
+
+    .metodos-contato{
+        display: block;
+    }
+
+    .metodos-contato h3{
+        padding-top: 16px;
+    }
+
+    form{
+        padding-bottom: 16px;
+    }
+
+    form textarea{
+        height: 100px;
+    }
+    
+    footer .container{
+        display: block;
+        align-content: center;
+    }
+    
+    footer p{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/*############### TELA ACIMA #######################*/
+
+@media screen and (min-width: 768px) {
+    .menu_media{
+        display: none;
+    }
+    .menu_media ul li{
+        display: none;
+    }
+
+    #storage .container img{
+        height: 250px;
+        border-radius: 12px;
+    }    
+
+    .metodos-contato form{
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    form input,
+    form textarea,
+    form button{
+        width: 320px;
+    }
+    
 }
