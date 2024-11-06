@@ -62,10 +62,45 @@ header nav li a{
 .logo{
     display: flex;
     align-items: center;
+    position: relative;
+    animation-name: surgirLogo;
+    animation-duration: 3s;
+}
+
+.menuSuperior{
+    position: relative;
+    animation-name: surgirMenuSuperior;
+    animation-duration: 3s;
+}
+
+@keyframes surgirLogo {
+    0%{
+        opacity: 0;
+        mix-blend-mode: multiply;
+        right: 200px;
+    }
+    100%{
+        opacity: 1;
+        mix-blend-mode: multiply;
+        right: 0px;
+    }
+}
+
+@keyframes surgirMenuSuperior {
+    0%{
+        opacity: 0;
+        mix-blend-mode: multiply;
+        left: 200px;
+    }
+    100%{
+        opacity: 1;
+        mix-blend-mode: multiply;
+        left: 0px;
+    }
 }
 
 header img{
-    height: 50px;
+    height: 70px;
     mix-blend-mode: multiply;
 }
 
@@ -176,8 +211,27 @@ img.imagem-servicos{
 /*############ SEÇÃO STORAGE ##############*/
 /*######################################*/
 
+#storage .container .self-storage img{
+    width: 80%;
+}
+
 #storage .container img{
     border-radius: 12px;
+    padding-bottom: 16px;
+    width: 100%;
+}
+
+.grade{
+    padding-top: 16px;
+    display: grid;
+    grid-template-columns: 65% 35%;
+    column-gap: 16px;
+}
+
+.self-storage{
+    text-align: center;
+    /* style="margin-right: 12px; text-align: center;" */
+    /* style="text-align: right;" */
 }
 
 /*############ SEÇÃO CONTATO ##############*/
@@ -373,11 +427,11 @@ footer img{
     .menu_media ul li{
         display: none;
     }
-
+/* 
     #storage .container img{
         height: 250px;
         border-radius: 12px;
-    }    
+    }     */
 
     .metodos-contato form{
         padding-right: 16px;
