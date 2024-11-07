@@ -18,14 +18,7 @@ $(document).ready(function(){
         },1500)
     })
 
-    $('.container').infiniteScroll({
-        // options
-        path: '.pagination__next',
-        append: '.post',
-        history: false,
-      });
-
-      $(window).scroll(function() {
+       $(window).scroll(function() {
         if ($(this).scrollTop() > 100) {
             $('#voltar-topo').fadeIn();
         } else {
