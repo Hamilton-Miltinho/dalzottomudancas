@@ -92,6 +92,11 @@ header img{
     mix-blend-mode: multiply;
 }
 
+.error {
+    color: #f00;
+    margin-top: 8px;
+  }
+
 /*############### MENU HAMBURGUER #######################*/
 
 .menu-hamburguer{
