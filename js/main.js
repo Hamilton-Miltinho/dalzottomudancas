@@ -16,5 +16,12 @@ $(document).ready(function(){
         $('html, body').animate({
             scrollTop: targetOffset
         },1500)
-    })    
+    })
+
+    $('.container').infiniteScroll({
+        // options
+        path: '.pagination__next',
+        append: '.post',
+        history: false,
+      });
 })
