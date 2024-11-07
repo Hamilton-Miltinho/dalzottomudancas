@@ -36,6 +36,16 @@ nav li {
     text-transform: uppercase;
 }
 
+.btn-voltar-topo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; /* Inicialmente oculto */
+    cursor: pointer;
+    height: 40px;
+    mix-blend-mode: multiply;
+  }
+
 /*############### CABEÇALHO #######################*/
 
 header{

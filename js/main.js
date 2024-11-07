@@ -24,4 +24,12 @@ $(document).ready(function(){
         append: '.post',
         history: false,
       });
+
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+            $('#voltar-topo').fadeIn();
+        } else {
+            $('#voltar-topo').fadeOut();
+        }
+    });
 })
