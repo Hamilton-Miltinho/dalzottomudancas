@@ -18,6 +18,8 @@ $(document).ready(function(){
         },1500)
     })
 
+    $('#telefone').mask('(00) 00000-0000');
+
     $(window).scroll(function() {
         if ($(this).scrollTop() > 100) {
             $('#voltar-topo').fadeIn();
